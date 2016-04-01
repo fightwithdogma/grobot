@@ -4,7 +4,7 @@
 // @description a grow bot that doesn't spam others and cleans up the chat every few minutes
 // @author      /u/fightwithdogma
 // @include     https://www.reddit.com/robin
-// @version     1.0
+// @version     1.1
 // @grant       none
 // ==/UserScript==
 
