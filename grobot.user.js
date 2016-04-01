@@ -20,12 +20,14 @@ setInterval(function() {
     if (a == "end") {
         a = 1;
     }
-    var m = (a - Math.floor((Date.now() - new Date($("div.robin-message:nth-child(1) > time:nth-child(1)").attr("datetime"))) / 1000 / 60));
-    var s = (a - (Date.now() - new Date($("div.robin-message:nth-child(1) > time:nth-child(1)").attr("datetime"))) / 1000 / 60);
+
+    var t = new Date($("div.robin-message:nth-child(1) > time:nth-child(1)").attr("datetime"));
+    var m = (a - Math.floor((Date.now() - t) / 1000 / 60));
+    var s = (a - (Date.now() - t) / 1000 / 60);
     s = s - Math.floor(s);
     s = Math.floor(s * 60);
 
-    $('#customCounter').html(a+' minutes '+s+' seconds remaining');
+    $('#customCounter').html(m +' minutes '+s+' seconds remaining');
 }, 1000);
 setInterval(function() {$('#robinChatMessageList').html($('<div>').append($("div.robin-message:nth-child(1)").clone()).html()+$('<div>').append($("div.robin-message:nth-child(2)").clone()).html());}, 1000*60*10);
 setInterval(function() {
